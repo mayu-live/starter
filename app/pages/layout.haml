@@ -1,0 +1,35 @@
+:css
+  .layout {
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: #ccc;
+    display: flow-root;
+  }
+
+  .max-width {
+    margin: 0 auto;
+    max-width: 40em;
+    padding: 1em;
+  }
+
+  .main {
+  }
+
+  .footer {
+    background: #ccc;
+  }
+
+.layout
+  %header.header
+    .max-width
+      %h1 mayu-starter
+  %main.main
+    .max-width
+      %slot
+  %footer.footer
+    .max-width
+      %p Copyright #{Time.now.year} © Your Name

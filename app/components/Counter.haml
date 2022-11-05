@@ -1,0 +1,16 @@
+:ruby
+  def self.get_initial_state(initial_count: 0, **)
+    { count: initial_count }
+  end
+
+  def handle_click(event)
+    update do |state|
+      { count: state[:count] + 1}
+    end
+  end
+%div
+  %p
+    Count:
+    %output<= state[:count]
+  %p
+    %button(onclick=handle_click) Click me!
