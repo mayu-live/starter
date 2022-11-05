@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mayu-live/framework.git
-  revision: 2ae8afa1ee433e9948fc7c76c3ead1f5abdac774
+  revision: 1420616daa869bb75e2897044241ccbb6eaafa6d
   specs:
     mayu-live (0.0.0)
       async (~> 2.0.3)

@@ -1,7 +1,9 @@
+:ruby
+  Navigation = import("./Navigation")
 :css
   .layout {
     display: grid;
-    grid-template-rows: min-content auto min-content;
+    grid-template-rows: min-content min-content auto min-content;
     min-height: 100vh;
   }
 
@@ -16,6 +18,15 @@
     padding: 1em;
   }
 
+  .nav {
+    background: #ddd;
+  }
+
+  .header-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .main {
   }
 
@@ -26,10 +37,12 @@
 .layout
   %header.header
     .max-width
-      %h1 mayu-starter
+      .header-flex
+        %h1 mayu starter kit
+        %Navigation
   %main.main
     .max-width
       %slot
   %footer.footer
     .max-width
-      %p Copyright #{Time.now.year} © Your Name
+      %p Footer contnet
