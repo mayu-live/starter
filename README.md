@@ -34,6 +34,22 @@ To start the development server, run:
 If everything worked, you should be able to visit
 [`https://localhost:9292/`](https://localhost:9292/)
 
+## Deploying on fly.io
+
+Create a fly app
+
+    fly apps create
+
+Update `fly.toml` with the name of your created app.
+
+Generate a secret key and set it:
+
+    fly secrets set MAYU_SECRET_KEY=securely-randomly-generated-string
+
+Deploy the app
+
+    fly deploy
+
 ## Contributing
 
 Beware that there are bugs and rough edges.
