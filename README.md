@@ -2,9 +2,12 @@
 
 This is a simple starter kit for [mayu live](https://github.com/mayu-live/framework).
 
-You can find the documentation at [mayu.live/docs](https://mayu.live/docs).
+You can find more documentation at [mayu.live/docs](https://mayu.live/docs).
 
-Beware that this is experimental software.
+**Beware that this is experimental software.**
+
+If you have all dependencies installed, you should
+be able to deploy the app within a few minutes.
 
 ## Get started
 
@@ -36,17 +39,19 @@ If everything worked, you should be able to visit
 
 ## Deploying on fly.io
 
-Create a fly app
+Make sure you have installed [flyctl](https://fly.io/docs/flyctl/installing/)
+and that you [have an account](https://fly.io/docs/flyctl/auth-signup/) at
+[fly.io](https://fly.io/) and that you have
+[logged in](https://fly.io/docs/flyctl/auth-login/).
 
-    fly apps create
+Then, generate a `fly.toml` config file by running the following command:
 
-Update `fly.toml` with the name of your created app.
+    rake setup_fly
 
-Generate a secret key and set it:
+This will generate an app name for you, and if everything worked,
+it will give you the option to deploy immediately.
 
-    fly secrets set MAYU_SECRET_KEY=securely-randomly-generated-string
-
-Deploy the app
+Otherwise, you can deploy at any time by typing:
 
     fly deploy
 

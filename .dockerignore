@@ -1,3 +1,6 @@
 vendor
 .assets
 *.ipc
+fly.toml
+app-graph.md
+*.mayu-bundle
