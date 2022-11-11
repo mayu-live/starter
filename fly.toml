@@ -1,26 +1,24 @@
-app = "YOUR_APP_NAME"
-
+app = "mayu-live/starter"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
 
-[metrics]
-  port = 9092
-  path = "/metrics"
-
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+
+[metrics]
+  path = "/metrics"
+  port = 9092
 
 [[services]]
   http_checks = []
   internal_port = 3000
   processes = ["app"]
   protocol = "tcp"
-  script_checks = []
-
+  tcp_checks = []
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
@@ -34,10 +32,11 @@ processes = []
   [[services.ports]]
     handlers = ["tls"]
     port = 443
-    tls_options = { alpn = ["h2"] }
+    [services.ports.tls_options]
+      alpn = ["h2"]
 
-  [[services.tcp_checks]]
-    grace_period = "1s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+  [[services.script_checks]]
+    command = "/fly/healthcheck.sh"
+    interval = 10000
+    restart_limit = 3
+    timeout = 1000

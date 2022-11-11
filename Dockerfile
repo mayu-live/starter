@@ -107,6 +107,7 @@ RUN bin/mayu build && ls -l app.mayu-bundle
 
 FROM base
 
+COPY fly /fly
 COPY --from=build-app /app /app
 
 ENV PORT 3000

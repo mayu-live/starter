@@ -46,10 +46,9 @@ and that you [have an account](https://fly.io/docs/flyctl/auth-signup/) at
 
 Then, generate a `fly.toml` config file by running the following command:
 
-    rake setup_fly
+    rake launch_on_fly
 
-This will generate an app name for you, and if everything worked,
-it will give you the option to deploy immediately.
+This will set up everything for you and ask you if you want to deploy after.
 
 Otherwise, you can deploy at any time by typing:
 

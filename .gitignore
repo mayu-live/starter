@@ -3,5 +3,4 @@
 bin
 .assets
 app-graph.md
-fly.toml
 vendor
