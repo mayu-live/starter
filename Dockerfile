@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-ARG RUBY_VERSION=3.1.2
+ARG RUBY_VERSION=3.2.0
 ARG VARIANT=jemalloc-slim
 FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
@@ -54,7 +54,7 @@ FROM node:19.0.0-alpine3.15 as build-js
 
 RUN apk add --no-cache brotli
 
-COPY --from=build-gem-1 /build/vendor/bundle/ruby/3.1.0/bundler/gems/framework-*/lib/mayu/client /build
+COPY --from=build-gem-1 /build/vendor/bundle/ruby/3.2.0/bundler/gems/framework-*/lib/mayu/client /build
 
 WORKDIR /build
 
@@ -93,7 +93,7 @@ RUN \
     rm -rf vendor/cache
 
 COPY --from=build-js /build/dist /app/js-dist
-RUN mv js-dist "$(ls -d1 ./vendor/bundle/ruby/3.1.0/bundler/gems/framework-*/lib/mayu/client | head -n1)"/dist
+RUN mv js-dist "$(ls -d1 ./vendor/bundle/ruby/3.2.0/bundler/gems/framework-*/lib/mayu/client | head -n1)"/dist
 
 COPY mayu.toml .
 COPY app app
