@@ -2,4 +2,4 @@
 
 source "https://rubygems.org"
 
-gem "mayu-live", git: "https://github.com/mayu-live/framework.git"
+gem "mayu-live"

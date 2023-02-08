@@ -1,4 +1,6 @@
-app = "mayu-live/starter"
+# fly.toml file generated for broken-forest-9105 on 2023-02-07T21:35:22-05:00
+
+app = "broken-forest-9105"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
